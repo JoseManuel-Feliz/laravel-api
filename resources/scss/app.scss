@@ -1,0 +1,13 @@
+@use "~bootstrap/scss/bootstrap" as *;
+table {
+    table-layout: fixed;
+
+    th,
+    td {
+        word-wrap: break-word;
+    }
+}
+
+#status {
+    line-height: unset;
+}
