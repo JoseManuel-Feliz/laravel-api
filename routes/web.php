@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
+use App\Http\Controllers\Admin\StatusController as AdminStatusController;
 use App\Http\Controllers\Guest\ProjectController as GuestProjectController;
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,5 @@ Route::name('guest.')->group(function () {
 // | Admin Routes
 Route::prefix('/admin')->name('admin.')->group(function () {
     Route::resource('/projects', AdminProjectController::class);
+    Route::resource('/statuses', AdminStatusController::class);
 });
