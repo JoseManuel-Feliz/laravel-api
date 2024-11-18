@@ -12,7 +12,7 @@
             <h2>@yield('form-title','')</h2>
         </div>
         <form class="row g-2 justify-content-center" action="@yield('form-route')" method="POST"
-              enctype="multipart/form-data">
+            enctype="multipart/form-data">
             @csrf
 
             <!-- Form Methods -->
@@ -21,7 +21,7 @@
             <!-- Input for Project title -->
             <div class="col-7 form-floating mb-3">
                 <input class="form-control" type="text" name="project_title" id="title"
-                       value="{{old('project_title',$project->project_title)}}">
+                    value="{{old('project_title',$project->project_title)}}">
                 <label for="title">Project title</label>
 
                 <!-- Error Message -->
@@ -33,7 +33,7 @@
             <!-- Input for Project date -->
             <div class="col-7 form-floating mb-3">
                 <input class="form-control" type="date" name="launch_date" id="project-date"
-                       value="{{old('launch_date',$project->launch_date)}}">
+                    value="{{old('launch_date',$project->launch_date)}}">
                 <label for="project-date">Launch date</label>
 
                 <!-- Error Message -->
@@ -49,7 +49,7 @@
                 <div class="form-check">
 
                     <input class="form-check-input" type="checkbox" name="technologies[]" id="tech"
-                           value="{{$tech->id}}" @checked(in_array($tech->id,
+                        value="{{$tech->id}}" @checked(in_array($tech->id,
                     old("technologies", $project->technologies->pluck("id")->toArray())))>
                     <label class="form-check-label" for="tech">{{$tech->name}}</label>
                 </div>
@@ -84,7 +84,7 @@
             <!-- Input for  Project repository link-->
             <div class="col-7 form-floating mb-3">
                 <input class="form-control" type="text" name="repository_url" id="repo-link"
-                       value="{{old('repository_url',$project->repository_url)}}">
+                    value="{{old('repository_url',$project->repository_url)}}">
                 <label for="repo-link">Repository url</label>
 
                 <!-- Error Message -->
@@ -107,7 +107,7 @@
             <!-- Input for  Project description-->
             <div class="col-7 form-floating mb-3">
                 <textarea class="form-control" type="text" name="project_summary"
-                          id="description">{{ old('project_summary', $project-> project_summary)}}</textarea>
+                    id="description">{{ old('project_summary', $project-> project_summary)}}</textarea>
                 <label for="description">Description</label>
 
 

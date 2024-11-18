@@ -20,7 +20,7 @@
             <!-- Input for Project technologies -->
             <div class=" form-floating">
                 <input class="form-control" type="text" name="name" id="technology"
-                       value="{{ old('name', $technology->name)}}">
+                    value="{{ old('name', $technology->name)}}">
                 <label for="technology"></label>
 
                 <!-- Error Message -->
