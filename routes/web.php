@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
 use App\Http\Controllers\Admin\StatusController as AdminStatusController;
 use App\Http\Controllers\Admin\TechnologyController as AdminTechnologyController;
+use App\Http\Controllers\Admin\TypeController as AdminTypeController;
 use App\Http\Controllers\Guest\ProjectController as GuestProjectController;
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +35,5 @@ Route::prefix('/admin')->name('admin.')->group(function () {
     Route::resource('/projects', AdminProjectController::class);
     Route::resource('/statuses', AdminStatusController::class);
     Route::resource('/technologies', AdminTechnologyController::class);
+    Route::resource('/types', AdminTypeController::class);
 });
