@@ -28,6 +28,7 @@ class UpdateProjectRequest extends FormRequest
             'project_thumbnail' => ['nullable', 'image', 'max:320'],
             'project_summary' => ['required', 'string', 'min:3', 'max:2000'],
             'status_id' => ['required', 'numeric', 'integer', 'min:1', 'exists:statuses,id'],
+            'type_id' => ['required', 'numeric', 'integer', 'min:1', 'exists:types,id'],
             "technologies" => ["array", 'min:1', "exists:technologies,id"],
         ];
     }
