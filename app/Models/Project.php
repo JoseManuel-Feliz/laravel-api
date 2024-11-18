@@ -12,6 +12,10 @@ class Project extends Model
     {
         return $this->belongsTo(Status::class);
     }
+    public function types()
+    {
+        return $this->belongsTo(Type::class);
+    }
 
     public function technologies()
     {
@@ -24,5 +28,6 @@ class Project extends Model
         'repository_url',
         'project_summary',
         'status_id',
+        'type_id',
     ];
 }
