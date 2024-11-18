@@ -22,8 +22,8 @@ class StatusController extends Controller
      */
     public function create()
     {
-        $statuses = Status::all();
-        return view('admin.statuses.index', compact('statuses'));
+        $status = new Status();
+        return view('admin.statuses.create', compact('status'));
     }
 
     /**
@@ -31,10 +31,12 @@ class StatusController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validated();
+        $data = $request->validate([
+            'project_status' => ['required']
+        ]);
 
         $status = Status::create($data);
-        return redirect()->route('admin.statuses.show', compact('status'));
+        return redirect()->route('admin.statuses.index', compact('status'));
     }
 
     /**
@@ -44,6 +46,7 @@ class StatusController extends Controller
     {
 
         $status = Status::findOrFail($id);
+
         return view('admin.statuses.show', compact('status'));
     }
 
@@ -62,7 +65,9 @@ class StatusController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $data = $request->validated();
+        $data = $request->validate([
+            'project_status' => ['required']
+        ]);
 
         $status = Status::findOrFail($id);
         $status->update($data);
@@ -76,7 +81,13 @@ class StatusController extends Controller
     public function destroy(string $id)
     {
         $status = Status::findOrFail($id);
+        $status->delete();
 
-        return redirect('admin.statuses.index', compact('status'));
+        return redirect()->route('admin.statuses.index');
+    }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
 }
