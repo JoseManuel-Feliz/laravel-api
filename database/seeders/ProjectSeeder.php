@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Status;
 use App\Models\Project;
+use App\Models\Type;
 
 class ProjectSeeder extends Seeder
 {
@@ -315,32 +316,36 @@ class ProjectSeeder extends Seeder
 
         // | Get status IDs
         $statusIds = Status::all()->pluck('id');
+        $typesIds = Type::all()->pluck('id');
         //dd($statusIds[0]);
 
         foreach ($projects as $project) {
             // | New Project instance
-            $newProjec = new Project();
+            $newProject = new Project();
 
             // | Assign status_id
-            $newProjec->status_id = $statusIds[0];
+            $newProject->status_id = $statusIds[0];
+
+            // | Assign type_id
+            $newProject->type_id = $typesIds->random();
 
             // | Set project title
-            $newProjec->project_title = $project['project_title'];
+            $newProject->project_title = $project['project_title'];
 
             // | Set launch date
-            $newProjec->launch_date = $project['launch_date'];
+            $newProject->launch_date = $project['launch_date'];
 
             // | Set thumbnail
-            $newProjec->project_thumbnail = $project['project_thumbnail'];
+            $newProject->project_thumbnail = $project['project_thumbnail'];
 
             // | Set repository URL
-            $newProjec->repository_url = $project['repository_url'];
+            $newProject->repository_url = $project['repository_url'];
 
             // | Set summary
-            $newProjec->project_summary = $project['project_summary'];
+            $newProject->project_summary = $project['project_summary'];
 
             // | Save project
-            $newProjec->save();
+            $newProject->save();
         }
     }
 }
