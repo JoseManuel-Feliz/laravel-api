@@ -77,7 +77,7 @@
                         <td>
                             <!-- Show btn -->
                             <a class="btn btn-light fs-5 me-1"
-                               href="{{route('admin.technologies.show',$technology->id)}}">
+                                href="{{route('admin.technologies.show',$technology->id)}}">
                                 {{$technology->name}} projects
                             </a>
                         </td>
@@ -90,7 +90,7 @@
 
                             <!-- Delete form -->
                             <form class="d-inline" action="{{route('admin.technologies.destroy',$technology->id)}}"
-                                  method="POST">
+                                method="POST">
                                 @csrf
                                 {{method_field('DELETE')}}
 

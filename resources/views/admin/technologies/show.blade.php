@@ -24,7 +24,7 @@
 
                 {{-- Link to view specific project details --}}
                 <a href="{{route('admin.projects.show',$project->id)}}"
-                   class="stretched-link text-reset text-decoration-none fs-5">
+                    class="stretched-link text-reset text-decoration-none fs-5">
                     {{$project->project_title }}
                 </a>
 

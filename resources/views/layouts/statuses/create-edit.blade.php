@@ -20,7 +20,7 @@
             <!-- Input for Project status -->
             <div class=" form-floating">
                 <input class="form-control" type="text" name="project_status" id="status"
-                       value="{{ old('project_status', $status->project_status)}}">
+                    value="{{ old('project_status', $status->project_status)}}">
                 <label for="status"></label>
 
                 <!-- Error Message -->

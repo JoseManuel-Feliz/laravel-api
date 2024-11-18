@@ -67,7 +67,7 @@
 
                             <!-- Delete form -->
                             <form class="d-inline" action="{{route('admin.statuses.destroy',$status->id)}}"
-                                  method="POST">
+                                method="POST">
                                 @csrf
                                 {{method_field('DELETE')}}
 
