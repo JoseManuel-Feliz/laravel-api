@@ -36,7 +36,7 @@ class TechnologyController extends Controller
         ]);
 
         $technology = Technology::create($data);
-    return redirect()->route('admin.technologies.index', compact('technologies'));
+    return redirect()->route('admin.technologies.index', compact('technology'));
     }
 
     /**
@@ -47,7 +47,7 @@ class TechnologyController extends Controller
 
         $technology = Technology::findOrFail($id);
 
-    return view('admin.technologies.show', compact('technologies'));
+    return view('admin.technologies.show', compact('technology'));
     }
 
     /**
@@ -57,7 +57,7 @@ class TechnologyController extends Controller
     {
         $technology = Technology::findOrFail($id);
 
-    return view('admin.technologies.edit', compact('technologies'));
+    return view('admin.technologies.edit', compact('technology'));
     }
 
     /**
@@ -72,7 +72,7 @@ class TechnologyController extends Controller
         $technology = Technology::findOrFail($id);
         $technology->update($data);
 
-    return redirect()->route('admin.technologies.show', compact('technologies'));
+    return redirect()->route('admin.technologies.index', compact('technology'));
     }
 
     /**
