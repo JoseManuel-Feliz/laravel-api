@@ -1,5 +1,11 @@
+// Import Bootstrap
 @use "~bootstrap/scss/bootstrap" as *;
-table {
+
+// Import font-awesome icons
+@use "~@fortawesome/css/all.min.css";
+
+//
+table.index {
     table-layout: fixed;
 
     th,
