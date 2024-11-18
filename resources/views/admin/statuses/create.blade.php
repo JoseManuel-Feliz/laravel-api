@@ -1,7 +1,20 @@
-@extends('layouts.app')
+@extends('layouts.statuses.create-edit')
 
-@section('main-content')
-
-<div>Status create</div>
-
+{{-- form title --}}
+@section('form-title')
+{{"You're creating a new status"}}
 @endsection
+
+{{-- form route --}}
+@section('form-route')
+{{route('admin.statuses.store')}}
+@endsection
+
+{{-- form method --}}
+@section('form-method')
+{{method_field('POST')}}
+@endsection
+
+@section('submit-btn-text', 'Create')
+
+@section('reset-btn-text','Reset inputs')
