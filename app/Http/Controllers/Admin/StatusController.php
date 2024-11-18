@@ -72,7 +72,7 @@ class StatusController extends Controller
         $status = Status::findOrFail($id);
         $status->update($data);
 
-        return redirect()->route('admin.statuses.show', compact('status'));
+        return redirect()->route('admin.statuses.index', compact('status'));
     }
 
     /**
