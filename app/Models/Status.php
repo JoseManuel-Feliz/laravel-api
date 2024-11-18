@@ -12,4 +12,5 @@ class Status extends Model
     {
         return $this->hasMany(Project::class);
     }
+    protected $fillable = ['project_status'];
 }
