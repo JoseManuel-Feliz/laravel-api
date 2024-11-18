@@ -8,19 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
+
     public function status()
     {
         return $this->belongsTo(Status::class);
-    }
-    public function types()
-    {
-        return $this->belongsTo(Type::class);
     }
 
     public function technologies()
     {
         return $this->belongsToMany(Technology::class);
     }
+
     protected $fillable = [
         'project_title',
         'launch_date',

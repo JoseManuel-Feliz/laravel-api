@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Status;
+use App\Models\Type;
 use App\Models\Project;
 use App\Models\Technology;
 use App\Http\Controllers\Controller;
@@ -30,7 +31,8 @@ class ProjectController extends Controller
 
         $technologies = Technology::all();
         $statuses = Status::all();
-        return view('admin.projects.create', compact('project', 'technologies', 'statuses'));
+        $types = Type::all();
+        return view('admin.projects.create', compact('project', 'technologies', 'statuses', 'types'));
     }
 
     /**
@@ -68,7 +70,8 @@ class ProjectController extends Controller
 
         $technologies = Technology::all();
         $statuses = Status::all();
-        return view('admin.projects.edit', compact('project', 'technologies', 'statuses'));
+        $types = Type::all();
+        return view('admin.projects.edit', compact('project', 'technologies', 'statuses', 'types'));
     }
 
     /**
