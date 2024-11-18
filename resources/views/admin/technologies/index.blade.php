@@ -12,7 +12,7 @@
         </div>
 
 
-        <div class="col-7 table-responsive fs-5">
+        <div class="col-110 table-responsive fs-5">
 
             <!-- Create New Technology btn -->
             <div class="create-btn wrapper">
@@ -46,34 +46,37 @@
                         <td>
                             {{$technology->name}}
 
+                            {{-- Technologies icons --}}
+                            <i class="fa-brands
                             @switch($technology->name)
                             @case('laravel')
-                            <i class="fa-brands fa-laravel"></i>
-                            @break
-                            @case('css')
-                            <i class="fa-brands fa-css3-alt"></i>
-                            @break
-                            @case('js')
-                            <i class="fa-brands fa-js"></i>
-                            @break
-                            @case('vue.js')
-                            <i class="fa-brands fa-vuejs"></i>
-                            @break
-                            @case('php')
-                            <i class="fa-brands fa-php"></i>
-                            @break
-                            @case('mysql')
-                            <i class="fa-solid fa-database"></i>
-                            @break
-                            @default
-                            <i class="fa-brands fa-html5 "></i>
-                            @endswitch
+                             fa-laravel">
+                                @break
+                                @case('css')
+                                fa-css3-alt">
+                                @break
+                                @case('js')
+                                fa-js">
+                                @break
+                                @case('vue.js')
+                                fa-vuejs">
+                                @break
+                                @case('php')
+                                fa-php">
+                                @break
+                                @case('mysql')
+                                fa-solid fa-database">
+                                @break
+                                @default
+                                fa-html5 ">
+                                @endswitch
+                            </i>
                         </td>
 
                         <!-- Actions btns -->
                         <td>
                             <!-- Show btn -->
-                            <a class="btn btn-light fs-5 me-1 "
+                            <a class="btn btn-light fs-5 me-1"
                                href="{{route('admin.technologies.show',$technology->id)}}">
                                 {{$technology->name}} projects
                             </a>
