@@ -50,7 +50,7 @@
 
                     {{-- Project Types nav-link --}}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.projects.index') }}">Project Types</a>
+                        <a class="nav-link" href="{{ route('admin.types.index') }}">Project Types</a>
                     </li>
 
                     {{-- Project Technologies nav-link --}}

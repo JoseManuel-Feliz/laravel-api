@@ -70,13 +70,33 @@
                         selected
                         @endif
                         >
-                        {{ old('status_id', $status->project_status)}}
+                        {{ $status->project_status }}
                     </option>
                     @endforeach
                 </select>
                 <label for="status">Project status</label>
                 <!-- Error Message -->
-                @error('project_status')
+                @error('status_id')
+                <div>{{ $message }}</div>
+                @enderror
+            </div>
+
+            <!-- Input for Project types -->
+            <div class="col-7 form-floating mb-3">
+                <select class="form-select" name="type_id" id="type">
+
+                    @foreach($types as $type)
+                    <option value="{{$type->id}}" @if($type->id === old('type_id',$project->type_id))
+                        selected
+                        @endif
+                        >
+                        {{ $type->project_type}}
+                    </option>
+                    @endforeach
+                </select>
+                <label for="type">Project type</label>
+                <!-- Error Message -->
+                @error('type_id')
                 <div>{{ $message }}</div>
                 @enderror
             </div>
