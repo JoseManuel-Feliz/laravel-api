@@ -56,7 +56,7 @@
 
                     {{-- Project Technologies nav-link --}}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.projects.index') }}">Projects Technologies</a>
+                        <a class="nav-link" href="{{ route('admin.technologies.index') }}">Projects Technologies</a>
                     </li>
                     @endguest
                 </ul>
