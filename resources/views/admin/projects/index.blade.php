@@ -46,7 +46,13 @@
                             <td>{{$project->launch_date}}</td>
 
                             <!-- Project status -->
-                            <td>{{$project->status->project_status}}</td>
+                            <td>
+                                @if (empty($project->status->project_status))
+                                Status not found for this project
+                                @else
+                                {{$project->status->project_status}}
+                                @endif
+                            </td>
 
                             <!-- Project technologies -->
                             <td colspan="2" class="text-center">
@@ -65,7 +71,13 @@
                             </td>
 
                             <!-- Project type -->
-                            <td>{{$project->type->project_type}}</td>
+                            <td>
+                                @if (empty($project->type->project_type))
+                                Project type is missing or could not be retrieved
+                                @else
+                                {{$project->type->project_type}}
+                                @endif
+                            </td>
 
                             <!-- Project repository link -->
                             <td colspan="2">{{$project->repository_url}}</td>
