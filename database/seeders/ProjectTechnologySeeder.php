@@ -6,7 +6,6 @@ use App\Models\Project;
 use App\Models\Technology;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Arr;
 
 class ProjectTechnologySeeder extends Seeder
 {
@@ -17,12 +16,12 @@ class ProjectTechnologySeeder extends Seeder
     {
         $projects = Project::all();
 
-        $technologies = Technology::all()->pluck('id')->toArray();
+        $technologies = Technology::all()->pluck('id');
 
         //@dd($technologies);
 
         foreach ($projects as $project) {
-            $project->technologies()->sync(array_rand($technologies, 3));
+            $project->technologies()->sync($technologies->random(3));
         }
     }
 }
